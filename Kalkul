@@ -1,0 +1,43 @@
+V_OP = int(input("Введите число операций: \n"))
+n = 0
+
+while n != V_OP:
+    b = True
+
+    zn_a = float(input("Введите значение: \n"))
+    zn_b = float(input("Введите значение: \n"))
+    
+    Kol_Op = int(input("Выберите операцию: "
+    "\n1 - сложение"
+    "\n2 - вычитание"
+    "\n3 - умножение"
+    "\n4 - деление"
+    "\n5 - деление с остатком"
+    "\n6 - возведение в степень\n"))
+    
+    match Kol_Op:
+        case 1: 
+            zn_a = (zn_a + zn_b)
+        case 2: 
+            zn_a = (zn_a - zn_b)
+        case 3: 
+            zn_a = (zn_a * zn_b)
+
+        case 4:
+            if zn_b == 0:
+                print("Ошибка, деление на ноль запрещено!")
+                b = False
+            else:
+                zn_a = (zn_a / zn_b)
+        case 5: 
+            if zn_b == 0:
+                print("Ошибка, деление на ноль запрещено!")
+                b = False
+            else:
+                zn_a = (zn_a % zn_b)
+                
+        case 6: 
+             zn_a = pow(zn_a, zn_b)
+    if b:
+        print(zn_a)
+        n += 1
